@@ -52,24 +52,27 @@ public class pathMatrixServlet extends HttpServlet {
 		blockMatrix[0][1].setRoom("401");
 		blockMatrix[0][1].setColor("e7e7e7");
 
-		blockMatrix[0][3].setRoom("401");
+		blockMatrix[0][3].setRoom("restroom");
 		blockMatrix[0][3].setColor("e7e7e7");
 		
-
-		blockMatrix[0][4].setRoom("401");
-		blockMatrix[0][4].setColor("e7e7e7");
 		
-		blockMatrix[2][0].setRoom("401");
+		blockMatrix[2][0].setRoom("402");
 		blockMatrix[2][0].setColor("e7e7e7");
 		
-		blockMatrix[2][1].setRoom("401");
+		blockMatrix[2][1].setRoom("402");
 		blockMatrix[2][1].setColor("e7e7e7");
 		
-		blockMatrix[3][4].setRoom("401");
+		blockMatrix[3][4].setRoom("403");
 		blockMatrix[3][4].setColor("e7e7e7");
 		
-		blockMatrix[4][4].setRoom("401");
+		blockMatrix[4][4].setRoom("403");
 		blockMatrix[4][4].setColor("e7e7e7");
+		
+		blockMatrix[3][3].setRoom("403");
+		blockMatrix[3][3].setColor("e7e7e7");
+		
+		blockMatrix[4][3].setRoom("403");
+		blockMatrix[4][3].setColor("e7e7e7");
 	
 		//비상구 블록 표시
 
@@ -79,7 +82,9 @@ public class pathMatrixServlet extends HttpServlet {
 		blockMatrix[4][0].setRoom("escape");
 		blockMatrix[4][0].setColor("#008CBA");
 		
-
+		blockMatrix[3][0].setRoom("escape");
+		blockMatrix[3][0].setColor("#008CBA");
+		
 		request.setAttribute("blockMatrix", blockMatrix);
 		request.getRequestDispatcher("test.jsp").forward(request, response);
 		

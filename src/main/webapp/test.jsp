@@ -17,7 +17,7 @@
 <% for(Block[] dto: blockMatrix) {%>	
 	
 	<% for (Block dto2 : dto){ %>
-		<button style= "background-color: <%=dto2.getColor() +";"%> border:0;"><%= dto2.getRoom() %></button>
+		<button style= "width:90px; height:90px; border: 0; background-color: <%=dto2.getColor() +";"%>"><%= dto2.getRoom() %></button>
 	<% } %>
 	<br>
 <% } %>
