@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+.textBox{
+	width:90px; 
+	height:90px;
+	margin-right: -5.6px;
+	border-radius: 0px;
+	
+	background-color: olive;
+
+	
+}
+

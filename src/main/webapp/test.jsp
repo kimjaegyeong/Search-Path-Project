@@ -1,11 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import= "project.test.DTO.Block" %>    
+<%@ page import= "project.test.DTO.Block" %>   
+ 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link type="text/css" rel="stylesheet" href="css/create_evacuation_map_css.css">
 </head>
 <body>
 <%
@@ -17,7 +19,9 @@
 <% for(Block[] dto: blockMatrix) {%>	
 	
 	<% for (Block dto2 : dto){ %>
-		<button style= "width:90px; height:90px; border: 0; background-color: <%=dto2.getColor() +";"%>"><%= dto2.getRoom() %></button>
+		<input type= "text" background-color: <%=dto2.getColor() +";"%>"><%= dto2.getRoom() %>
+		<!-- <input type= "text" class="textBox" style="background-color: <%=dto2.getColor() +";"%>" value ="<%= dto2.getRoom() %>">
+		 -->
 	<% } %>
 	<br>
 <% } %>
