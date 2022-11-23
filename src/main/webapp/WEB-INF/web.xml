@@ -19,4 +19,14 @@
     <servlet-name>pathMatrixServlet</servlet-name>
     <url-pattern>/pathMatrix</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>create_evacuation_map_servlet</display-name>
+    <servlet-name>create_evacuation_map_servlet</servlet-name>
+    <servlet-class>project.controller.create_evacuation_map_servlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>create_evacuation_map_servlet</servlet-name>
+    <url-pattern>/create_evacuation_map</url-pattern>
+  </servlet-mapping>
 </web-app>

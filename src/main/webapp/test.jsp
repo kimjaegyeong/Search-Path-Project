@@ -19,9 +19,9 @@
 <% for(Block[] dto: blockMatrix) {%>	
 	
 	<% for (Block dto2 : dto){ %>
-		<input type= "text" background-color: <%=dto2.getColor() +";"%>"><%= dto2.getRoom() %>
-		<!-- <input type= "text" class="textBox" style="background-color: <%=dto2.getColor() +";"%>" value ="<%= dto2.getRoom() %>">
-		 -->
+		
+		<button class="buttonBox" style="background-color: <%=dto2.getColor() +";"%>" value ="<%= dto2.getRoom() %>">
+		 
 	<% } %>
 	<br>
 <% } %>

@@ -9,10 +9,13 @@
 <link type="text/css" rel="stylesheet" href="css/create_evacuation_map_css.css">
 </head>
 <body>
-<script type="text/javascript" src="js/inputText_gathering.js"></script>
-<form action="js/inputText_gathering.js" name="submitButton" method="get">
-<% int count =0; %>
+<script type="text/javascript" class="textBox" src="js/inputText_gathering.js"></script>
 
+<form action="create_evaucation_map" name="submitButton" method="get">
+<% int count =0; %>
+<input type= "text" name="MatrixSize" value=25 readonly="readonly">
+<br>
+<br>
 <% for(int i=0; i<5; i++) {%>	
 	
 	<% for (int j=0; j<5; j++){ %>
@@ -21,8 +24,8 @@
 	<% } %>
 	<br>
 <% } %>
-
-<button  onClick= "gathering()">전송</button>
+<br>
+<div><input type=submit value="전송" style="margin-left:230px;"></div>
 </form>
 </body>
 </html>
