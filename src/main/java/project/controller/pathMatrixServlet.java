@@ -46,6 +46,8 @@ public class pathMatrixServlet extends HttpServlet {
 			}
 		}
 		// 호실 표시 
+		
+		
 		blockMatrix[0][0].setRoom("401");
 		blockMatrix[0][0].setColor("e7e7e7");
 
@@ -85,6 +87,8 @@ public class pathMatrixServlet extends HttpServlet {
 		blockMatrix[3][0].setRoom("escape");
 		blockMatrix[3][0].setColor("#008CBA");
 		
+		blockMatrix[2][2].setRoom("fire");
+		blockMatrix[3][0].setColor("red");
 		request.setAttribute("blockMatrix", blockMatrix);
 		request.getRequestDispatcher("test.jsp").forward(request, response);
 		

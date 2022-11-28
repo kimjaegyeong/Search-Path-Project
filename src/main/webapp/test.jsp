@@ -20,11 +20,13 @@
 	
 	<% for (Block dto2 : dto){ %>
 		
-		<button class="buttonBox" style="background-color: <%=dto2.getColor() +";"%>" value ="<%= dto2.getRoom() %>">
+		<button class="buttonBox" style="background-color: <%=dto2.getColor() +";"%>"  onClick="location.href='exam.jsp';"><%= dto2.getRoom() %>
+		</button>
 		 
 	<% } %>
 	<br>
 <% } %>
+
 </table>
 </body>
 </html>

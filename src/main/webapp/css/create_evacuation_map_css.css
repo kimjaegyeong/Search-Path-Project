@@ -10,9 +10,12 @@
 
 	
 }
-
+.clicked {
+		background-color: gold;
+		}
 .buttonBox{
 	width:90px; 
 	height:90px;
+	border: 0;
 }
 

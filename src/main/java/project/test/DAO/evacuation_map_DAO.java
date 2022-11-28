@@ -3,16 +3,17 @@ import project.test.DTO.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class create_evacuation_map_DAO {
+public class evacuation_map_DAO {
 	private String driver = "com.mysql.cj.jdbc.Driver";
 	private	String url = "jdbc:mysql://localhost:3306/evacuationmap?characterEncoding=utf-8&serverTimezone=UTC&useSSL=false&useUnicode=true";
 
 	private String user = "root";
 	private String password = "password";
 
-	public create_evacuation_map_DAO() { 
+	public evacuation_map_DAO() { 
 		try {
 			
 			Class.forName(driver);
@@ -49,4 +50,40 @@ public class create_evacuation_map_DAO {
 		
 	}
 	
+	public String[] select_evacuation_map() {
+		try {
+			
+			Connection conn= DriverManager.getConnection(url, user, password);
+			
+			String map_info[] = new String[3];
+			String sql = "select * from evacuationmap where floor= 'floor4' ";
+			PreparedStatement pstmt = conn.prepareStatement(sql); 
+			
+			ResultSet rs= pstmt.executeQuery();
+			
+			if(rs.next()) {
+				map_info[0] =rs.getString("mapSize");
+				map_info[1] = rs.getString("mapMatrix");
+				map_info[2]= rs.getString("floor");
+				
+				for(int i=0; i<3; i++) {
+					System.out.println(map_info[i]);
+						
+				}
+				
+				return map_info;
+			}
+			
+		
+			
+			rs.close();
+			pstmt.close();
+			conn.close();
+			
+		}catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
 }

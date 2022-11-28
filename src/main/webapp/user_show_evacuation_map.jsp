@@ -4,10 +4,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-<!-- 해당 페이지를 새로고침 하면 이전 서블릿인 create_evacuation_map_servlet이 다시 가동되어 데이터베이스에 중복의 데이터가 저장됨. 문제 해결 요  -->
 <meta charset="UTF-8">
 <title>evacuation map display</title>
+
 <link type="text/css" rel="stylesheet" href="css/create_evacuation_map_css.css">
+<script>
+var btn = document.getElementsByClassName("buttonBox");
+
+function handleClick(event) {
+  console.log(event.target);
+  // console.log(this);
+  // 콘솔창을 보면 둘다 동일한 값이 나온다
+
+  console.log(event.target.classList);
+
+  if (event.target.classList[1] === "clicked") {
+    event.target.classList.remove("clicked");
+  } else {
+    for (var i = 0; i < btn.length; i++) {
+      btn[i].classList.remove("clicked");
+    }
+
+    event.target.classList.add("clicked");
+  }
+}
+
+function init() {
+  for (var i = 0; i < btn.length; i++) {
+    btn[i].addEventListener("click", handleClick);
+  }
+}
+
+init();
+</script>
+
 </head>
 <body>
 
@@ -23,7 +53,6 @@
 		<button class="buttonBox" style="background-color: <%=dto.getColor() +";"%>" ><%= (dto.getRoom().equals("path")) ? "_" :dto.getRoom()  %></button>
 		<% count++; %>
 	<% if(count % 5 == 0 ){ %> <br> <% }%>
-		
 	<% } %>
 
 </table>

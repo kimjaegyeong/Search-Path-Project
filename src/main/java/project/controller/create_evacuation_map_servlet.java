@@ -49,16 +49,20 @@ public class create_evacuation_map_servlet extends HttpServlet {
 			else if(room.equals("exit")) {
 				block[i].setColor("blue");
 			}
+			else if (room.contains("extinguisher")) {
+				block[i].setColor("green");
+			}
 			else {
 				block[i].setColor("gray");
 			}
 					
 		}
-		create_evacuation_map_DAO map = new create_evacuation_map_DAO();
+		evacuation_map_DAO map = new evacuation_map_DAO();
 		boolean check = map.insert_evaucation_map(arr, MatSize, "floor4");
 		if(check) {
 			request.setAttribute("block", block);
 			request.getRequestDispatcher("show_evacuation_map.jsp").forward(request, response);
+			
 		}
 	}
 }
